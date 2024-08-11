@@ -181,6 +181,7 @@ export default {
 .site-name h1 {
   padding: 0;
   margin: 0;
+  margin-left: -20px; /* 用负的 margin 抵消内边距 */
 }
 
 .logo {
