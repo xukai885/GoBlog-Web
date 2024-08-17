@@ -37,7 +37,7 @@ export default {
         url: "/share"
       }).then((res) => {
         if (res.code === 1000) { // 请求成功
-          this.shareInfo = res.data.shareinfo; // 正确访问返回的shareinfo数据
+          this.shareInfo = res.data.shareinfo.sort((a,b)=>new Date(b.date) - new Date(a.date)) // 正确访问返回的shareinfo数据
         }
       }).catch((error) => {
         console.error("获取分享信息时出错: ", error);
