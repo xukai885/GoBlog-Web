@@ -13,6 +13,7 @@ import SearchType from '../views/SearchType.vue'
 import TimeArchive from '../views/TimeArchive.vue'
 import Share from '../views/Share.vue'
 import About from '../views/About.vue'
+import Adminer from '../views/Adminer.vue'
 // 2 定义一些路由
 // 每个路由都需要映射到一个组件
 //
@@ -52,18 +53,18 @@ const routes = [
         path: "/about",
         name: "about",
         component: About,
-    }
-    // {
-    //     path:"/login",
-    //     name:"login",
-    //     component: Login,
-    // },
-    // {
-    //     path:"/info",
-    //     name:"Info",
-    //     component:Info,
-    //     meta: {requireAuth: true} // 添加meta信息 登陆使用
-    // },
+    },
+    {
+        path: "/login",
+        name: "login",
+        component: Login,
+    },
+    {
+        path:"/adminer",
+        name:"adminer",
+        component: Adminer,
+        meta: {requireAuth: true} // 添加meta信息 登陆使用
+    },
 ]
 
 // 3 创建路由实例并传递routes配置

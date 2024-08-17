@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <el-card class="login-card">
-      <h3 class="login-title">用户登录</h3>
+      <h3 class="login-title">后台管理</h3>
       <el-form ref="loginForm" :model="loginForm" :rules="loginRules" label-width="80px" class="login-form">
         <el-form-item label="用户名" prop="username">
           <el-input v-model="loginForm.username" placeholder="请输入用户名"></el-input>
@@ -19,7 +19,7 @@
   <script>
   import axios from 'axios';
   import {ElMessage} from 'element-plus'
-  
+
   export default{
     // name:"Login",
     data(){
@@ -46,11 +46,11 @@
           })
         }).then((res)=>{
           if (res.code==1000){ // 登陆成功
-            localStorage.setItem("loginResult",JSON.stringify(res.data)); 
+            localStorage.setItem("loginResult",JSON.stringify(res.data));
             this.$store.commit("login",res.data)
-            this.$router.push({path:this.redirect||'/info'}) //登陆成功跳转页面
+            this.$router.push({path:this.redirect||'/adminer'}) //登陆成功跳转页面
             ElMessage('登陆成功')
-            
+
           }else{
             console.log(res.msg)
             ElMessage(res.msg)
@@ -59,12 +59,12 @@
           console.log(error)
           ElMessage(res.msg)
         })
-  
+
       }
     }
   }
-  
-  
+
+
   </script>
 
 <style>
@@ -88,6 +88,5 @@
   margin-top: 20px;
 }
 </style>
-  
-  
-  
+
+
